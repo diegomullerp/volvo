@@ -1,0 +1,22 @@
+<h1>Add new Truck</h1>
+
+<p>Use the form bellow to add a new truck in the system.</p>
+
+<div class="container">
+    <form #truckForm="ngForm" (ngSubmit)="onSubmit(truckForm.value)">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control"  [(ngModel)]="name" name="name" id="name" required>
+      </div>
+ 
+      <div class="form-group">
+        <label for="alterEgo">Model</label>
+        <select class="form-control"  [(ngModel)]="model" name="model" id="model">
+                <option *ngFor="let forecast of forecasts" [value]="forecast.id" >{{forecast.name}}</option>
+          </select>
+      </div>
+ 
+      <button type="submit" class="btn btn-success">Submit</button>
+ 
+    </form>
+</div>

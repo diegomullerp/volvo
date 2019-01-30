@@ -1,0 +1,22 @@
+<h1>Trucks</h1>
+
+<p>List of trucks in the system</p>
+
+<p *ngIf="!forecasts"><em>Loading...</em></p>
+
+<table class='table' *ngIf="forecasts">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Model</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let forecast of forecasts">
+            <td>{{ forecast.id }}</td>
+            <td>{{ forecast.name }}</td>
+            <td>{{ forecast.model }}</td>
+        </tr>
+    </tbody>
+</table>
